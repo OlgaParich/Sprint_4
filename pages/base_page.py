@@ -9,10 +9,10 @@ class BasePageScooter:
     def __init__(self, driver):
         self.driver = driver
 
-    @allure.step('Нажимаем на логотип Яндекс в хэдере')
+    @allure.step('Кликаем на логотип Яндекс в хэдере')
     def click_logo_yandex(self):
         self.driver.find_element(*self.yandex_logo).click()
 
-    @allure.step('Нажимаем на логотип Самокат хэдере')
+    @allure.step('Кликаем на логотип Самокат хэдере')
     def click_logo_scooter(self):
         self.driver.find_element(*self.scooter_logo).click()
