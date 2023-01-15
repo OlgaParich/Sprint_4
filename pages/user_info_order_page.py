@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 
 
@@ -13,15 +14,15 @@ class UserInfo:
     def __init__(self, driver):
         self.driver = driver
 
-    #Метод заполняет поле "Имя"
+    @allure.step('Заполняем поле Имя')
     def set_name(self, name):
         self.driver.find_element(*self.name_field).send_keys(name)
 
-    # Метод заполняет поле "Фамилия"
+    @allure.step('Заполняем поле Фамилия')
     def set_surname(self, surname):
         self.driver.find_element(*self.surname_field).send_keys(surname)
 
-    # Метод заполняет поле "Адрес"
+    @allure.step('Заполняем поле Адрес')
     def set_address(self, address):
         self.driver.find_element(*self.address_field).send_keys(address)
 
@@ -33,16 +34,16 @@ class UserInfo:
     def click_station_metro(self):
         self.driver.find_element(*self.station_metro_list).click()
 
-    #Метод выбрает станцию метро
+    @allure.step('Выбираем станцию метро')
     def set_station_metro(self, station):
         self.input_station_metro(station)
         self.click_station_metro()
 
-    # Метод заполняет поле "Номер телефона"
+    @allure.step('Заполняем поле Номер телефона')
     def set_telephone_number(self, number):
         self.driver.find_element(*self.telephone_field).send_keys(number)
 
-    # Метод нажимает кнопку "Далее"
+    @allure.step('Нажимаем кнопку Далее')
     def click_button_next(self):
         self.driver.find_element(*self.next_button).click()
 
