@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 
 
@@ -8,10 +9,10 @@ class BasePageScooter:
     def __init__(self, driver):
         self.driver = driver
 
-    #Метод нажимает на логотип "Яндекс"
+    @allure.step('Нажимаем на логотип Яндекс в хэдере')
     def click_logo_yandex(self):
         self.driver.find_element(*self.yandex_logo).click()
 
-    #Метод нажимает на логотип "Самокат"
+    @allure.step('Нажимаем на логотип Самокат хэдере')
     def click_logo_scooter(self):
         self.driver.find_element(*self.scooter_logo).click()
