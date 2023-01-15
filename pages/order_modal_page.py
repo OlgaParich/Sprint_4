@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 
 
@@ -7,6 +8,6 @@ class OrderModalPage:
     def __init__(self, driver):
         self.driver = driver
 
-    #Метод получает текст из модального окна заказа
+    @allure.step('Получаем текст из модального окна созданного заказа')
     def get_text_header(self):
         return self.driver.find_element(*self.header_modal_page).text
