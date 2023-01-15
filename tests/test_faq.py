@@ -1,6 +1,8 @@
+import allure
 from pages.main_page import MainPageScooter
 
 
+@allure.title('Проверка текста при открытии первого пункта в разделе FAQ')
 def test_first_question(work_browser):
     expected_answer = 'Сутки — 400 рублей. Оплата курьеру — наличными или картой.'
     main_page = MainPageScooter(work_browser)
@@ -10,6 +12,7 @@ def test_first_question(work_browser):
     assert actual_answer == expected_answer
 
 
+@allure.title('Проверка текста при открытии второго пункта в разделе FAQ')
 def test_second_question(work_browser):
     expected_answer = 'Пока что у нас так: один заказ — один самокат.' \
                       ' Если хотите покататься с друзьями, можете просто сделать несколько заказов — один за другим.'
@@ -20,6 +23,7 @@ def test_second_question(work_browser):
     assert actual_answer == expected_answer
 
 
+@allure.title('Проверка текста при открытии третьего пункта в разделе FAQ')
 def test_third_question(work_browser):
     expected_answer = 'Допустим, вы оформляете заказ на 8 мая. Мы привозим самокат 8 мая в течение дня. ' \
                       'Отсчёт времени аренды начинается с момента, когда вы оплатите заказ курьеру. ' \
@@ -31,6 +35,7 @@ def test_third_question(work_browser):
     assert actual_answer == expected_answer
 
 
+@allure.title('Проверка текста при открытии четвертого пункта в разделе FAQ')
 def test_fourth_question(work_browser):
     expected_answer = 'Только начиная с завтрашнего дня. Но скоро станем расторопнее.'
     main_page = MainPageScooter(work_browser)
@@ -40,6 +45,7 @@ def test_fourth_question(work_browser):
     assert actual_answer == expected_answer
 
 
+@allure.title('Проверка текста при открытии пятого пункта в разделе FAQ')
 def test_fifth_question(work_browser):
     expected_answer = 'Пока что нет! Но если что-то срочное — ' \
                       'всегда можно позвонить в поддержку по красивому номеру 1010.'
@@ -50,6 +56,7 @@ def test_fifth_question(work_browser):
     assert actual_answer == expected_answer
 
 
+@allure.title('Проверка текста при открытии шестого пункта в разделе FAQ')
 def test_sixth_question(work_browser):
     expected_answer = 'Самокат приезжает к вам с полной зарядкой. Этого хватает на восемь суток — ' \
                       'даже если будете кататься без передышек и во сне. Зарядка не понадобится.'
@@ -60,6 +67,7 @@ def test_sixth_question(work_browser):
     assert actual_answer == expected_answer
 
 
+@allure.title('Проверка текста при открытии седьмого пункта в разделе FAQ')
 def test_seventh_question(work_browser):
     expected_answer = 'Да, пока самокат не привезли. Штрафа не будет, объяснительной записки тоже не попросим. Все же свои.'
     main_page = MainPageScooter(work_browser)
@@ -69,6 +77,7 @@ def test_seventh_question(work_browser):
     assert actual_answer == expected_answer
 
 
+@allure.title('Проверка текста при открытии восьмого пункта в разделе FAQ')
 def test_eighth_question(work_browser):
     expected_answer = 'Да, обязательно. Всем самокатов! И Москве, и Московской области.'
     main_page = MainPageScooter(work_browser)
