@@ -1,7 +1,9 @@
+import allure
 from pages.base_page import BasePageScooter
 from pages.main_page import MainPageScooter
 
 
+@allure.title('Проверка перехода при клике на логотип Самокат')
 def test_click_logo_scooter(work_browser):
     expected_url = 'https://qa-scooter.praktikum-services.ru/'
     logo_in_header = BasePageScooter(work_browser)
@@ -12,6 +14,7 @@ def test_click_logo_scooter(work_browser):
     assert actual_url == expected_url
 
 
+@allure.title('Проверка перехода при клике на логотип Яндекс')
 def test_click_logo_yandex(work_browser):
     logo_in_header = BasePageScooter(work_browser)
     logo_in_header.click_logo_yandex()
