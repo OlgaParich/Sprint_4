@@ -1,3 +1,4 @@
+import allure
 from selenium.webdriver.common.by import By
 
 
@@ -20,7 +21,7 @@ class RentalDetail:
     def click_title(self):
         self.driver.find_element(*self.title).click()
 
-    #Метод задает дату
+    @allure.step('Выбираем дату аренды')
     def set_date(self, date):
         self.enter_date(date)
         self.click_title()
@@ -33,7 +34,7 @@ class RentalDetail:
     def choice_rental_period(self):
         self.driver.find_element(*self.value_rental_period).click()
 
-    #Метод задает срок аренды
+    @allure.step('Выбираем срок аренды')
     def set_rental_period(self):
         self.click_field_rental_period()
         self.choice_rental_period()
@@ -46,14 +47,18 @@ class RentalDetail:
     def choice_black_scooter(self):
         self.driver.find_element(*self.black_scooter).click()
 
-    #Метот заполняет все данные про аренду
-    def set_rental_detail(self, date, color):
-        self.set_date(date)
-        self.set_rental_period()
+    @allure.step('Выбираем цвет самоката')
+    def choice_color_scooter(self, color):
         if color == 'черный':
             self.choice_black_scooter()
         else:
             self.choice_grey_scooter()
+
+    #Метот заполняет все данные про аренду
+    def set_rental_detail(self, date, color):
+        self.set_date(date)
+        self.set_rental_period()
+        self.choice_color_scooter()
 
 
 
